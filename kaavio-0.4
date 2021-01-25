@@ -1,0 +1,54 @@
+selain->palvelin: HTTP GET https//studies/exampleapp/notes
+palvelin-->selain: HTML-koodi
+
+note over selain:
+selain tulkitsee HTML-koodin ja
+aloitta JS -koodin tulkaamisen
+end note
+
+selain->palvelin: HTTP GET https://studies/exampleapp/main.js
+palvelin-->selain: main.js koodi
+
+selain->palvelin: HTTP GET https://studies/exampleapp/main.css
+palvelin-->selain: main css koodi
+
+note over selain:
+selain tulkitsee Javascript
+-koodin main.js -tiedostossa ja
+hakee data.json -tiedoston
+end note
+
+selain->palvelin: HTTP GET https://studies/exampleapp/data.json
+palvelin-->selain: JSON koodi
+
+note over selain:
+selain tulkitsee JSON-datan ja
+luo sivun sisällön
+end note
+
+note over selain:
+Käyttäjä lisää tekstikenttän
+viestin ja painaa "Save" -nappia
+end note
+
+selain->palvelin: HTTP POST https://studies/exampleapp/new_note
+note over palvelin:
+Palvelin tallentaa uuden viestin
+data.json -tiedostoon
+end note
+
+palvelin-->selain: HTTP request koodit
+
+note over selain:
+Käyttäjä hakee data.json
+tiedoston palvelimelta
+end note
+
+selain->palvelin: HTTP GET https://studies/exampleapp/data.json
+palvelin-->selain: JSON -koodi
+
+note over selain:
+Selain päivittää sivun
+uusilla tiedoilla.
+end note
+
