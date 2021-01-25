@@ -1,0 +1,28 @@
+selain->palvelin: HTTP GET https//studies/exampleapp/spa
+palvelin-->selain: HTML-koodi
+
+note over selain:
+selain tulkitsee HTML-koodin ja
+aloitta JS -koodin tulkaamisen
+end note
+
+selain->palvelin: HTTP GET https://studies/exampleapp/spa.js
+palvelin-->selain: spa.js koodi
+
+selain->palvelin: HTTP GET https://studies/exampleapp/main.css
+palvelin-->selain: main.css koodi
+
+note over selain:
+selain tulkitsee Javascript
+-koodin spa.js -tiedostossa ja
+hakee data.json -tiedoston
+end note
+
+selain->palvelin: HTTP GET https://studies/exampleapp/data.json
+palvelin-->selain: JSON koodi
+
+note over selain:
+selain tulkitsee JSON-datan ja
+luo sivun sisällön
+end note
+
